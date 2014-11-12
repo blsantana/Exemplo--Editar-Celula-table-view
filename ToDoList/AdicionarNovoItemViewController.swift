@@ -56,9 +56,11 @@ class AdicionarNovoItemViewController: UIViewController {
         
         if !textField.text.isEmpty{
             
+            if var item = self.itemEditado{
+               item.nome = textField.text
+            }
             
-                self.itemEditado!.nome = textField.text
-                novoItemDaLista = ItemLista(nome: textField.text)
+            novoItemDaLista = ItemLista(nome: textField.text)
            
         }
         

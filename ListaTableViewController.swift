@@ -41,7 +41,8 @@ class ListaTableViewController: UITableViewController,UITableViewDelegate,UITabl
             
             var itemIndex = self.tableView!.indexPathForSelectedRow()!.row
             self.itens[itemIndex] = itemEditado
-             tableView.reloadData()
+            tableView.reloadData()
+            sourceVC.itemEditado = nil
             
         }
         else if let item = sourceVC.novoItemDaLista{
@@ -49,6 +50,8 @@ class ListaTableViewController: UITableViewController,UITableViewDelegate,UITabl
             itens.append(item)
             
             tableView.reloadData()
+            
+            sourceVC.novoItemDaLista = nil
             
         }
         
