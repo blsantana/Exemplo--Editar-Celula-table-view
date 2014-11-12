@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7E0F97F519FF1B1C00EA690E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F97F419FF1B1C00EA690E /* AppDelegate.swift */; };
-		7E0F97F719FF1B1C00EA690E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F97F619FF1B1C00EA690E /* ViewController.swift */; };
 		7E0F97FA19FF1B1C00EA690E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E0F97F819FF1B1C00EA690E /* Main.storyboard */; };
 		7E0F97FC19FF1B1C00EA690E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0F97FB19FF1B1C00EA690E /* Images.xcassets */; };
 		7E0F97FF19FF1B1C00EA690E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0F97FD19FF1B1C00EA690E /* LaunchScreen.xib */; };
 		7E0F980B19FF1B1C00EA690E /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F980A19FF1B1C00EA690E /* ToDoListTests.swift */; };
+		7E0F981519FF24E600EA690E /* AdicionarNovoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F981419FF24E600EA690E /* AdicionarNovoItemViewController.swift */; };
+		7E0F981719FF254D00EA690E /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F981619FF254D00EA690E /* ListaTableViewController.swift */; };
+		7E85F5381A084D28009E28E7 /* ItemLista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E85F5371A084D28009E28E7 /* ItemLista.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		7E0F97EF19FF1B1B00EA690E /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0F97F319FF1B1C00EA690E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E0F97F419FF1B1C00EA690E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E0F97F619FF1B1C00EA690E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E0F97F919FF1B1C00EA690E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E0F97FB19FF1B1C00EA690E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7E0F97FE19FF1B1C00EA690E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7E0F980419FF1B1C00EA690E /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0F980919FF1B1C00EA690E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E0F980A19FF1B1C00EA690E /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
+		7E0F981419FF24E600EA690E /* AdicionarNovoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionarNovoItemViewController.swift; sourceTree = "<group>"; };
+		7E0F981619FF254D00EA690E /* ListaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaTableViewController.swift; path = ../ListaTableViewController.swift; sourceTree = "<group>"; };
+		7E85F5371A084D28009E28E7 /* ItemLista.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemLista.swift; path = ../ItemLista.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +81,11 @@
 		7E0F97F119FF1B1B00EA690E /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				7E0F981619FF254D00EA690E /* ListaTableViewController.swift */,
+				7E85F5371A084D28009E28E7 /* ItemLista.swift */,
 				7E0F97F419FF1B1C00EA690E /* AppDelegate.swift */,
-				7E0F97F619FF1B1C00EA690E /* ViewController.swift */,
 				7E0F97F819FF1B1C00EA690E /* Main.storyboard */,
+				7E0F981419FF24E600EA690E /* AdicionarNovoItemViewController.swift */,
 				7E0F97FB19FF1B1C00EA690E /* Images.xcassets */,
 				7E0F97FD19FF1B1C00EA690E /* LaunchScreen.xib */,
 				7E0F97F219FF1B1B00EA690E /* Supporting Files */,
@@ -161,6 +167,7 @@
 				TargetAttributes = {
 					7E0F97EE19FF1B1B00EA690E = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = NZ4AC38CQ6;
 					};
 					7E0F980319FF1B1C00EA690E = {
 						CreatedOnToolsVersion = 6.1;
@@ -212,8 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E0F97F719FF1B1C00EA690E /* ViewController.swift in Sources */,
+				7E0F981519FF24E600EA690E /* AdicionarNovoItemViewController.swift in Sources */,
 				7E0F97F519FF1B1C00EA690E /* AppDelegate.swift in Sources */,
+				7E85F5381A084D28009E28E7 /* ItemLista.swift in Sources */,
+				7E0F981719FF254D00EA690E /* ListaTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,9 +345,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -346,9 +359,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -405,6 +422,7 @@
 				7E0F981019FF1B1C00EA690E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E0F981119FF1B1C00EA690E /* Build configuration list for PBXNativeTarget "ToDoListTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +431,7 @@
 				7E0F981319FF1B1C00EA690E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
