@@ -21,9 +21,7 @@ class ItemLista{
         
     }
     
-    deinit{
-        println("Deinitialization")
-    }
+   
     
     
 }

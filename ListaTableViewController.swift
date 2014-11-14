@@ -11,14 +11,20 @@ import UIKit
 class ListaTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
 
     
+    // MARK: - Propriedades
+    
     var itens: [ItemLista] = []
     
     
+    
+    // MARK: - Helper Methods
+    
     func carregarDadosIniciais(){
         
-        var item1 = ItemLista(nome:"Estudar swift")
+        var item1 = ItemLista(nome:"Rever o feedback do Fabio :-)")
         
         itens.append(item1)
+        
         
         var item2 = ItemLista(nome:"Estudar Inglês")
         
@@ -28,50 +34,23 @@ class ListaTableViewController: UITableViewController,UITableViewDelegate,UITabl
         var item3 = ItemLista(nome:"Desenvolver App")
         
         itens.append(item3)
+        
+        
+        var item4 = ItemLista(nome:"Estudar Swift")
+        itens.append(item4)
 
         
     }
     
-    @IBAction func voltaParaLista(segue:UIStoryboardSegue!){
-        
-        
-        var sourceVC = segue.sourceViewController as AdicionarNovoItemViewController
-        
-        if let itemEditado = sourceVC.itemEditado{
-            
-            var itemIndex = self.tableView!.indexPathForSelectedRow()!.row
-            self.itens[itemIndex] = itemEditado
-            tableView.reloadData()
-            sourceVC.itemEditado = nil
-            
-        }
-        else if let item = sourceVC.novoItemDaLista{
-            
-            itens.append(item)
-            
-            tableView.reloadData()
-            
-            sourceVC.novoItemDaLista = nil
-            
-        }
-        
-    }
+
+    // MARK: - View Controller Lifecyvle
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.carregarDadosIniciais()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -104,7 +83,6 @@ class ListaTableViewController: UITableViewController,UITableViewDelegate,UITabl
 
         return cell
     }
-    
 
     
     // Override to support conditional editing of the table view.
@@ -112,62 +90,71 @@ class ListaTableViewController: UITableViewController,UITableViewDelegate,UITabl
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    
 
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
        
         if editingStyle == .Delete {
-            // Delete the row from the data source
             
             itens.removeAtIndex(indexPath.row)
             
             tableView.reloadData()
             
-        } /*else if editingStyle == .Insert {
-        
-            
-            
-        }   */
+        }
         
         
     }
     
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
-    */
 
+    // TODO: Apresentei uma alternativa para prepareForSegue
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
         
         if segue.identifier == "EditItem" {
-            var adicionarNovoItemViewController: AdicionarNovoItemViewController = segue.destinationViewController as AdicionarNovoItemViewController
-        
-            var itemIndex = self.tableView!.indexPathForSelectedRow()!.row
-            var itemSelected = self.itens[itemIndex]
-        
-            adicionarNovoItemViewController.itemEditado = itemSelected
+            
+             if let cell = sender as? UITableViewCell {
+            
+                
+                    var indexPath = tableView.indexPathForCell(cell)
+                
+                    var adicionarNovoItemVC = segue.destinationViewController as AdicionarNovoItemViewController
+                
+                    if let ip = indexPath {
+                
+                        adicionarNovoItemVC.itemEditado = itens[ip.row]
+                
+                    }
+               
+                }
+            
         }
-       
         
+    }
+    
+    
+    
+    @IBAction func voltaParaLista(segue:UIStoryboardSegue!){
+        
+        
+        var sourceVC = segue.sourceViewController as AdicionarNovoItemViewController
+        
+        if let itemEditado = sourceVC.itemEditado{
+            
+            var itemIndex = self.tableView!.indexPathForSelectedRow()!.row
+            
+            itens[itemIndex] = itemEditado
+            
+        }
+        else if let item = sourceVC.novoItemDaLista{
+            
+            itens.append(item)
+            
+        }
+        
+        tableView.reloadData()
         
     }
 

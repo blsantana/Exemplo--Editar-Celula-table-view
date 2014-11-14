@@ -28,17 +28,9 @@ class AdicionarNovoItemViewController: UIViewController {
         
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
-    
     // MARK: - Navigation
-
-    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -56,11 +48,15 @@ class AdicionarNovoItemViewController: UIViewController {
         
         if !textField.text.isEmpty{
             
-            if var item = self.itemEditado{
-               item.nome = textField.text
+            
+            if itemEditado != nil {
+            
+                itemEditado!.nome = textField.text
+            
             }
             
-            novoItemDaLista = ItemLista(nome: textField.text)
+            
+                novoItemDaLista = ItemLista(nome: textField.text)
            
         }
         
